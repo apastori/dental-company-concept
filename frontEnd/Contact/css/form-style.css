@@ -1,0 +1,576 @@
+/* Style for the Form Webpage */
+/* Crimson Text */
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text|Lato");
+/* Montserrat Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+/* Relaway Font of the entire website */
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400&display=swap");
+/* Main Variables */
+:root {
+  --translateXAxisAfter: 0px;
+  --translateXAxisBefore: 0px;
+  --translateYAxisAfter: 0px;
+  --translateYAxisBefore: 0px;
+  --translateDuration: 2s;
+}
+
+/* The purpose of the following ruleset is to eliminate all the given margins and padding
+of elements including the body tag to start clean */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+html, body {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px !important;
+  overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Navbar Style */
+.navbar-container {
+  height: 70px;
+  width: 100%;
+}
+
+header {
+  border-bottom: 1.5px solid blue;
+}
+
+header img {
+  height: 60px;
+  width: 70px;
+}
+
+header nav .navbar-brand-name {
+  font-size: 20px;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+  color: black;
+  text-decoration: none;
+}
+
+header nav .navbar-brand-name:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+header nav .navbar-brand-name:hover:after {
+  width: 92%;
+}
+
+header nav .navbar-toggler {
+  border: 2px solid blue !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header nav #navbarNav .navbar-nav .nav-link::before, header nav #navbarNav .navbar-nav .nav-link::after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #FFF;
+  content: "";
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header nav #navbarNav .navbar-nav .nav-link::before {
+  top: 20px;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+header nav #navbarNav .navbar-nav .nav-link::after {
+  bottom: 20px;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+header nav #navbarNav .navbar-nav .nav-link {
+  margin-right: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: black;
+  position: relative;
+  font-size: 15px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+header nav #navbarNav .navbar-nav .nav-link:hover::before, header nav #navbarNav .navbar-nav .nav-link:hover::after {
+  background-color: blue;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+header nav #navbarNav .navbar-nav .active::before, header nav #navbarNav .navbar-nav .active::after {
+  background-color: blue;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* Form Section */
+#form-section {
+  -webkit-animation: FadeRightLeft 2s ease-in-out;
+          animation: FadeRightLeft 2s ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  text-align: center;
+  margin: 3% 0;
+}
+
+#form-section .form-title {
+  letter-spacing: 3px;
+  font-size: 36px;
+  line-height: 48px;
+  padding-top: 20px;
+  padding-bottom: 48px;
+  display: inline-block;
+}
+
+#form-section .form-title:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+#form-section .form-title:hover:after {
+  width: 92%;
+}
+
+#form-section .label-input-div {
+  position: relative;
+  margin-top: 20px;
+}
+
+#form-section .contact-form > .label-input-div input {
+  font-family: Lusitana, Arial;
+  color: #333;
+  border: 0;
+  padding: 4px 0px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  width: 50%;
+  height: 30px;
+  font-size: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+#form-section .contact-form > .label-input-div input:focus {
+  outline: none;
+}
+
+#form-section .contact-form > .label-input-div >
+input:-webkit-autofill,
+#form-section input:-webkit-autofill:hover,
+#form-section input:-webkit-autofill:focus,
+#form-section input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  text-decoration: underline;
+}
+
+#form-section input ~ .span-focus-border {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3399FF;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#form-section input ~ .span-focus-border.error-input {
+  background-color: #FF0000;
+  width: 50%;
+  margin-left: 25%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#form-section input:focus ~ .span-focus-border {
+  width: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-left: 25%;
+}
+
+#form-section .contact-form > .label-input-div label {
+  display: block;
+  color: #aaa;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: -1;
+  letter-spacing: 0.5px;
+}
+
+#form-section .label-form.name-label, #form-section .label-form.email-label {
+  position: absolute;
+  top: 9px;
+  right: 68%;
+}
+
+#form-section .label-form.lastname-label {
+  position: absolute;
+  top: 9px;
+  right: 63%;
+}
+
+#form-section .label-form.phone-label {
+  position: absolute;
+  top: 9px;
+  right: 65%;
+}
+
+#form-section input:focus ~ .label-form {
+  top: -16px;
+  right: 70%;
+  font-size: 12px;
+  color: #3399FF;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section input:focus ~ .lastname-label {
+  top: -16px;
+  right: 66%;
+  font-size: 12px;
+  color: #3399FF;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section input:focus ~ .phone-label {
+  top: -16px;
+  right: 67.5%;
+  font-size: 12px;
+  color: #3399FF;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section .contact-form > .label-input-div > .name-label.error-input {
+  color: #FF0000;
+  top: -16px;
+  right: 55%;
+  font-size: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section .contact-form > .label-input-div > .email-label.error-input {
+  color: #FF0000;
+  top: -16px;
+  right: 55%;
+  font-size: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section .contact-form > .label-input-div > .phone-label.error-input {
+  color: #FF0000;
+  top: -16px;
+  right: 52%;
+  font-size: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section .contact-form > .label-input-div > .lastname-label.error-input {
+  color: #FF0000;
+  top: -16px;
+  right: 51%;
+  font-size: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#form-section .contact-form button {
+  margin-top: 30px;
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#form-section .contact-form button:hover {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+#form-section .contact-form button:focus {
+  outline: none;
+}
+
+@-webkit-keyframes FadeRightLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.3;
+    -webkit-transform: translate3d(-10%, 0, 0);
+            transform: translate3d(-10%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes FadeRightLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.3;
+    -webkit-transform: translate3d(-10%, 0, 0);
+            transform: translate3d(-10%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+/* End of Form Section */
+hr {
+  height: 2px;
+  background-color: blue;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+/* Contact Information Section */
+#contact-information {
+  -webkit-animation: FadeLeftRight 2s ease-in-out;
+          animation: FadeLeftRight 2s ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  text-align: center;
+  margin-top: 3%;
+}
+
+#contact-information h1 {
+  letter-spacing: 3px;
+  font-size: 36px;
+  line-height: 48px;
+  padding-top: 20px;
+  padding-bottom: 48px;
+  display: inline-block;
+}
+
+#contact-information h1:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+#contact-information h1:hover:after {
+  width: 92%;
+}
+
+#contact-information h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#contact-information #map-div-container, #contact-information #map-photo-div-container {
+  width: 75%;
+  height: 250px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+}
+
+#contact-information #map-div-container iframe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes FadeLeftRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.3;
+    -webkit-transform: translate3d(10%, 0, 0);
+            transform: translate3d(10%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes FadeLeftRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.3;
+    -webkit-transform: translate3d(10%, 0, 0);
+            transform: translate3d(10%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+/* End Contact Section */
+/* Footer */
+footer {
+  background-color: black;
+  margin-top: 7%;
+  overflow: hidden;
+  width: 100%;
+}
+
+footer .footer-first-div {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+footer .footer-first-div h1 {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  top: 10%;
+}
+
+footer .footer-first-div h1:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+footer .footer-first-div h1:hover:after {
+  width: 92%;
+}
+
+footer .footer-first-div img {
+  height: 60px;
+  width: 70px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+footer .footer-contact-number-div,
+footer .footer-schedule-div, footer .footer-address-div {
+  margin-top: 0.5%;
+}
+
+footer .footer-contact-number-div img,
+footer .footer-schedule-div img, footer .footer-address-div img {
+  width: 35px;
+  height: 35px;
+}
+
+footer p {
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+footer .footer-contact-form-div > p {
+  margin-top: 1%;
+}
+
+footer .footer-contact-number-div > img {
+  margin-top: 6%;
+}
+
+footer .footer-address-div > img {
+  margin-top: 5%;
+}
+
+footer .footer-schedule-div > img {
+  margin-top: 4.7%;
+}
+
+footer .footer-contact-form-div > h1 {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 431px) {
+  .navbar-brand-name {
+    display: none;
+  }
+}
+/*# sourceMappingURL=form-style.css.map */

@@ -1,0 +1,344 @@
+/* Crimson Text */
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text|Lato");
+
+/* Montserrat Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+/* Relaway Font of the entire website */
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400&display=swap");
+
+/* Main Variables */
+
+$font-elements: 'Lato', sans-serif;
+
+$font-brand: 'Montserrat', sans-serif;
+
+$font-common: 'Raleway', sans-serif;
+
+$font-color: black;
+
+$backgroundGrey: #F9F9F9;
+
+$navbar: (
+    height: 70px,
+    width: 100%
+);
+
+:root {
+    --translateXAxisAfter: 0px;
+    --translateXAxisBefore: 0px;
+    --translateYAxisAfter: 0px;
+    --translateYAxisBefore: 0px;
+    --translateDuration: 2s;
+}
+
+$neonAnimation: (
+     duration: 2s
+);
+
+$fadeInAnimationDuration: 2;
+
+/* The purpose of the following ruleset is to eliminate all the given margins and padding
+of elements including the body tag to start clean */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-common;
+}
+
+html, body {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px !important;
+    overflow-x: hidden;
+    font-family: $font-common;
+}
+
+/* Navbar Style */
+
+.navbar-container {
+    height: map-get($navbar, height);
+    width: map-get($navbar, width);
+}
+
+header {
+    border-bottom: 1.5px solid blue;
+    img {
+        height: 60px;
+        width: 70px;
+    }
+    nav {
+        .navbar-brand-name {
+            font-size: 20px;
+            transition: all 0s ease;
+            color: $font-color;
+            text-decoration: none;
+            &:after {
+                content: "";
+                display: block;
+                width: 0;
+                border-bottom: 2px solid blue;
+                margin: 0 auto;
+                transition: all 0.3s linear 0s;
+            }
+            &:hover:after {
+                width: 92%;
+            }
+        }
+        .navbar-toggler {
+            border: 2px solid blue !important;
+            text-decoration:none; 
+            cursor:pointer;  
+        }
+        #navbarNav {
+            .navbar-nav {
+                .nav-link::before, .nav-link::after {
+                    position: absolute;
+                    left: 0px;
+                    width: 100%;
+                    height: 2px;
+                    background: #FFF;
+                    content: "";
+                    opacity: 0;
+                    transition: all 0.3s;
+                }
+                .nav-link::before {
+                    top: 20px;
+                    transform: translateY(-10px);
+                }
+                .nav-link::after {
+                    bottom: 20px;
+                    transform: translateY(10px);
+                }
+                .nav-link {
+                    margin-right: 20px;
+                    margin-left: 20px;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                    color: $font-color;
+                    position: relative;
+                    font-size: 15px;
+                    vertical-align: middle;
+                    line-height: 60px;
+                }
+                .nav-link:hover::before, .nav-link:hover::after {
+                    background-color: blue;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                .active::before, .active::after{
+                    background-color: blue;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+}
+
+/* Main Banner */
+
+figure {
+    margin-bottom: 0 !important;
+    height: 25rem;
+    .fixed-wrapped {
+        background-image: url("../resources/man-sitting-on-dental-chair-fondo-color.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        h1 {
+            padding-top: 10%;
+            color: white;
+            font-family: $font-common;
+            margin: 0 auto;
+            display: inline-block;
+            &:after {
+                content: "";
+                display: block;
+                width: 0;
+                border-bottom: 2px solid blue;
+                margin: 0 auto;
+                transition: all 0.3s linear 0s;
+            }
+            &:hover:after {
+                width: 92%;
+            }
+        }
+    }
+}
+
+.fun {
+    width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 2rem;
+    border-color: blue;
+    &:focus {
+        outline: 0;
+    }
+}
+
+.gif {
+    max-width: 100%;
+    margin-top: 3rem !important;
+}
+
+#teamSection {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    h1 {
+        transition: all 0s ease;
+        color: $font-color;
+        text-decoration: none;
+        display: inline-block;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            border-bottom: 2px solid blue;
+            margin: 0 auto;
+            transition: all 0.3s linear 0s;
+        }
+        &:hover:after {
+            width: 92%;
+        }
+    }
+    #cardsContainer {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        .row {
+            display: flex;
+            justify-content: space-around;
+            .card {
+                border: 1px solid black;
+                padding: 1%;
+                margin-top: 3rem !important;
+                button {
+                    padding: 2%;
+                    margin-top: 3%;
+                    margin-bottom: 3%;
+                    border-radius: 10%;
+                    border: 1px solid blue;
+                    &:hover {
+                        color: green;
+                        border-color: green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mission Section */
+
+#missionSection {
+    margin-top: 3rem;
+    h2 {
+        margin-top: 10%;
+        transition: all 0s ease;
+        color: $font-color;
+        text-decoration: none;
+        display: inline-block;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            border-bottom: 2px solid blue;
+            margin: 0 auto;
+            transition: all 0.3s linear 0s;
+        }
+        &:hover:after {
+            width: 92%;
+        }
+    }
+    p {
+        margin-top: 2rem;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: black;
+    margin-top: 2%;
+    overflow: hidden;
+    width: 100%;
+    .footer-first-div {
+        text-align: center;
+        overflow: auto;
+        white-space: nowrap;
+        text-align:center; 
+        h1 {
+            color: white;
+            font-size: 20px;
+            display: inline-block;
+            position: relative;
+            top: 10%;
+        }
+        h1:after {
+            content: "";
+            display: block;
+            width: 0;
+            border-bottom: 2px solid blue;
+            margin: 0 auto;
+            transition: all 0.3s linear 0s;
+        }
+        h1:hover:after {
+            width: 92%;
+        }
+        img {
+            // float: left;
+            height: 60px;
+            width: 70px;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+    }
+    .footer-contact-number-div,
+    .footer-schedule-div, .footer-address-div {
+        margin-top: 0.5%;
+        img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    p {
+        color: white;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left: 5px;
+    } 
+    .footer-contact-form-div > p {
+        margin-top: 1%;
+    }
+    .footer-contact-number-div > img {
+        margin-top: 6%;
+    } 
+    .footer-address-div > img {
+        margin-top: 5%;
+    }
+    .footer-schedule-div > img {
+        margin-top: 4.7%;
+    }
+    .footer-contact-form-div > h1 {
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 431px) {
+    .navbar-brand-name {
+        display: none;
+    }
+}

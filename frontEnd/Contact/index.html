@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us - Gabi Website</title>
+    <!-- Bootstrap Css links -->
+    <link rel="stylesheet" type="text/css" href="/bootstrapCss/bootstrap.css"></script>
+    <!-- custom Css stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/form-style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="#" class="navbar-brand">
+                <img src='./resources/logo-final-recortado.png' alt="Gabi Website logo">
+            </a>
+            <a href="#" class="navbar-brand-name">
+                Consultorio Jaume & Santo
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AboutUs">Nuestra Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Contact">Contacto</a>
+                    </li>
+                </ul>
+            </div> <!-- closing Navbar Collapse -->
+        </nav> <!-- closing Navbar -->
+    </header> <!-- closing header -->
+
+
+    <!-- Contact Form Div -->
+    <div id="content-form-page" class="container-fluid">
+        <div class="row">
+            <!-- Contact Form Section-->
+            <section id="form-section" class="col-12 col-lg-6"> 
+                <h1 class="form-title">Ponte En Contacto</h1>
+                <form class="mx-auto contact-form" method="POST">
+                    <div class="label-input-div">
+                        <input id="form-name" type="text" name="name">
+                        <label class="label-form name-label" for="form-name">Name</label>
+                        <span class="span-focus-border"></span>
+                    </div> <!-- closing div input label name -->
+                    <div class="label-input-div">
+                        <input id="form-lastname" type="text" name="lastname">
+                        <label class="label-form lastname-label" for="form-lastname">LastName</label>
+                        <span class="span-focus-border"></span>
+                    </div> <!-- closing div input label lastname -->
+                    <div class="label-input-div">
+                        <input id="form-email" type="text" name="email">
+                        <label class="label-form email-label" for="form-email">Email</label>
+                        <span class="span-focus-border"></span>
+                    </div> <!-- closing div input label email -->
+                    <div class="label-input-div">
+                        <input id="form-telefono" type="text" name="phone">
+                        <label class="label-form phone-label" for="form-telefono">Telefono</label>
+                        <span class="span-focus-border"></span>
+                    </div> <!-- closing div input label telephone -->
+                    <button type="submit">
+                    Enviar
+                    </button>
+                </form> <!-- closing Form -->
+            </section> <!-- closing form container section -->
+
+            <hr class="d-block d-lg-none">
+
+            <!-- Contact Information Section -->
+            <section id="contact-information" class="col-12 col-lg-6">
+                <h1>Información de Contacto</h1>
+                <h2>Juncal 1378 Apto 103</h2>
+                <h2>gsantoiglesias@gmail.com</h2>
+                <h2>099679912</h2>
+                <div id="map-div-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6544.052822982158!2d-56.1996255!3d-34.9057867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f802a53906c55%3A0xc581ac332d7e5b77!2sJuncal+1378%2C+11000+Montevideo%2C+Departamento+de+Montevideo!5e0!3m2!1ses!2suy!4v1562277297707!5m2!1ses!2suy" 
+                    frameborder="0" style="border:0" allowfullscreen="allowfullscreen" onload="checkingiFrame();">
+                    </iframe>
+                <!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCLxvaEdP-LVYAeNPnNGvzWwJJjuItgi8I&q=Juncal+1378,+11000+Montevideo,+Departamento+de+Montevideo">
+                </iframe> -->
+                </div>
+            </section> <!-- closing contact-information-section -->
+
+        </div> <!-- closing row div -->
+    </div> <!-- closing content-form-page div -->
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+
+        <div class="row">
+
+            <div class="footer-first-div col-12 col-md-6 col-lg-3">
+                <img class="image-info" src="resources/logo-final-recortado.png">
+                <h1 id="brand-logo-footer mt-sm-3">Consultorio Jaume & Santo</h1>
+            </div> 
+
+            <div class="text-center footer-contact-number-div col-12 col-md-6 col-lg-3">
+                <img class="image-info" src="resources/cell-phone-icon-transparent-background.jpg">
+                <p>099679912</p>
+            </div>
+
+            <div class="text-center footer-schedule-div col-12 col-md-6 col-lg-3">
+                <img class="image-info" src="resources/blue-clock-icon-transparent.png">
+                <p>Lun - Vie: 09:00 - 18:00</p>
+            </div>
+
+            <div class="text-center footer-address-div col-12 col-md-6 col-lg-3">
+                <img class="image-info" src="resources/png-home-icon-15.jpg">
+                <p>Juncal 1378 apto 103</p>
+            </div>
+
+        </div> <!-- close first row -->
+
+        <div class="row">
+
+            <div class="footer-contact-form-div col-12 text-center">
+                <h1>Contáctanos</h1>
+                <p>Copyright © Consultorio Santo</p>
+            </div>
+
+        </div> <!-- closing row div -->
+
+    </footer> 
+    <!-- closing footer -->
+
+    <!-- Jquery -->
+    <script language="javascript" src="/jquery/jquery.js"></script>
+    
+    <!-- Bootstrap Js and Popper JS -->
+    <script language="javascript" src="/bootstrapPopper/bootstrap.bundle.js"></script>
+
+    <!-- Custom Javascript -->
+    <script type="text/javascript" src="javascript/form-javascript.js"></script>
+
+</body>
+</html>

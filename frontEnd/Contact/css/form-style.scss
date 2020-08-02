@@ -1,0 +1,519 @@
+/* Style for the Form Webpage */
+
+/* Crimson Text */
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text|Lato");
+
+/* Montserrat Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+/* Relaway Font of the entire website */
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400&display=swap");
+
+/* Main Variables */
+
+$font-elements: 'Lato', sans-serif;
+
+$font-brand: 'Montserrat', sans-serif;
+
+$font-common: 'Raleway', sans-serif;
+
+$font-color: black;
+
+$backgroundGrey: #F9F9F9;
+
+$navbar: (
+    height: 70px,
+    width: 100%
+);
+
+:root {
+    --translateXAxisAfter: 0px;
+    --translateXAxisBefore: 0px;
+    --translateYAxisAfter: 0px;
+    --translateYAxisBefore: 0px;
+    --translateDuration: 2s;
+}
+
+$neonAnimation: (
+     duration: 2s
+);
+
+$fadeInAnimationDuration: 2;
+
+/* The purpose of the following ruleset is to eliminate all the given margins and padding
+of elements including the body tag to start clean */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-common;
+}
+
+html, body {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px !important;
+    overflow-x: hidden;
+    font-family: $font-common;
+}
+
+/* Navbar Style */
+
+.navbar-container {
+    height: map-get($navbar, height);
+    width: map-get($navbar, width);
+}
+
+header {
+    border-bottom: 1.5px solid blue;
+    img {
+        height: 60px;
+        width: 70px;
+    }
+    nav {
+        .navbar-brand-name {
+            font-size: 20px;
+            transition: all 0s ease;
+            color: $font-color;
+            text-decoration: none;
+            &:after {
+                content: "";
+                display: block;
+                width: 0;
+                border-bottom: 2px solid blue;
+                margin: 0 auto;
+                transition: all 0.3s linear 0s;
+            }
+            &:hover:after {
+                width: 92%;
+            }
+        }
+        .navbar-toggler {
+            border: 2px solid blue !important;
+            text-decoration:none; 
+            cursor:pointer;  
+        }
+        #navbarNav {
+            .navbar-nav {
+                .nav-link::before, .nav-link::after {
+                    position: absolute;
+                    left: 0px;
+                    width: 100%;
+                    height: 2px;
+                    background: #FFF;
+                    content: "";
+                    opacity: 0;
+                    transition: all 0.3s;
+                }
+                .nav-link::before {
+                    top: 20px;
+                    transform: translateY(-10px);
+                }
+                .nav-link::after {
+                    bottom: 20px;
+                    transform: translateY(10px);
+                }
+                .nav-link {
+                    margin-right: 20px;
+                    margin-left: 20px;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                    color: $font-color;
+                    position: relative;
+                    font-size: 15px;
+                    vertical-align: middle;
+                    line-height: 60px;
+                }
+                .nav-link:hover::before, .nav-link:hover::after {
+                    background-color: blue;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                .active::before, .active::after{
+                    background-color: blue;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+}
+
+/* Form Section */
+
+#form-section {
+    animation: FadeRightLeft 2s ease-in-out;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    text-align: center;
+    margin: 3% 0;
+    .form-title {
+        letter-spacing: 3px;
+        font-size: 36px;
+        line-height: 48px;
+        padding-top: 20px;
+        padding-bottom: 48px;
+        display: inline-block;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            border-bottom: 2px solid blue;
+            margin: 0 auto;
+            transition: all 0.3s linear 0s;
+        }
+        &:hover:after {
+            width: 92%;
+        }
+    }
+
+    .label-input-div {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .contact-form > .label-input-div input {
+        font-family: Lusitana, Arial;
+        color:#333;
+        border: 0;
+        padding: 4px 0px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        background-color: transparent;
+        width: 50%;
+        height: 30px;
+        font-size: 15px;
+        box-sizing: border-box;
+        letter-spacing: 1px;
+    }
+
+    .contact-form > .label-input-div input:focus {
+        outline: none;
+    }
+
+    .contact-form > .label-input-div > 
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active,
+    {
+        transition: background-color 5000s ease-in-out 0s;
+        text-decoration: underline;
+    }
+
+    input ~ .span-focus-border {
+        position: absolute; 
+        bottom: 10px; 
+        left: 0; 
+        width: 0; 
+        height: 2px; 
+        background-color: #3399FF; 
+        transition: 0.4s;
+    }
+
+    input ~ .span-focus-border.error-input {
+        background-color: #FF0000;
+        width: 50%;
+        margin-left: 25%; 
+        transition: 0.4s;
+    }
+
+    input:focus ~ .span-focus-border {
+        width: 50%; 
+        transition: 0.4s; 
+        margin-left: 25%; 
+    }
+
+    .contact-form > .label-input-div label {
+        display: block;  
+        color: #aaa; 
+        transition: 0.3s; 
+        z-index: -1; 
+        letter-spacing: 0.5px;
+    }
+
+    .label-form.name-label, .label-form.email-label {
+        position: absolute; 
+        top: 9px;
+        right: 68%;
+    }
+
+    .label-form.lastname-label {
+        position: absolute; 
+        top: 9px;
+        right: 63%;
+    }
+
+    .label-form.phone-label {
+        position: absolute; 
+        top: 9px;
+        right: 65%;
+    }
+
+    input:focus ~ .label-form {
+        top: -16px;
+        right: 70%;
+        font-size: 12px; 
+        color: #3399FF; 
+        transition: 0.3s;
+    }
+
+    input:focus ~ .lastname-label {
+        top: -16px;
+        right: 66%;
+        font-size: 12px; 
+        color: #3399FF; 
+        transition: 0.3s;
+    }
+
+    input:focus ~ .phone-label {
+        top: -16px;
+        right: 67.5%;
+        font-size: 12px; 
+        color: #3399FF; 
+        transition: 0.3s;
+    }
+
+
+    .contact-form > .label-input-div > .name-label.error-input {
+        color: #FF0000;
+        top: -16px;
+        right: 55%;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .contact-form > .label-input-div > .email-label.error-input {
+        color: #FF0000;
+        top: -16px;
+        right: 55%;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .contact-form > .label-input-div > .phone-label.error-input {
+        color: #FF0000;
+        top: -16px;
+        right: 52%;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .contact-form > .label-input-div > .lastname-label.error-input {
+        color: #FF0000;
+        top: -16px;
+        right: 51%;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .contact-form button {
+        margin-top: 30px;
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        font-family: $font-common;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    .contact-form button:hover {
+        background: #fff;
+        color: #000;
+        border: 2px solid #000;
+    }
+
+    .contact-form button:focus {
+        outline: none;
+    }
+
+    @keyframes FadeRightLeft {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0);
+        }
+        50% {
+            opacity: 0.3;
+            transform: translate3d(-10%, 0, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+} 
+
+/* End of Form Section */
+
+hr {
+    height: 2px;
+    background-color: blue;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+/* Contact Information Section */
+
+#contact-information {
+    animation: FadeLeftRight 2s ease-in-out;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    text-align: center;
+    margin-top: 3%;
+    h1 {
+        letter-spacing: 3px;
+        font-size: 36px;
+        line-height: 48px;
+        padding-top: 20px;
+        padding-bottom: 48px;
+        display: inline-block;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            border-bottom: 2px solid blue;
+            margin: 0 auto;
+            transition: all 0.3s linear 0s;
+        }
+        &:hover:after {
+            width: 92%;
+        }
+    }
+    h2 {
+        text-align: center;
+        font-family: $font-common;
+        letter-spacing: 3px;
+        padding-top:  10px;
+        padding-bottom: 10px;
+    }
+    %map-or-photo-container {
+        width: 75%;
+        height: 250px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+    }
+    #map-div-container {
+        @extend %map-or-photo-container;
+        iframe {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    #map-photo-div-container {
+        @extend %map-or-photo-container;
+    }
+
+    @keyframes FadeLeftRight {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0);
+        }
+        50% {
+            opacity: 0.3;
+            transform: translate3d(10%, 0, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+/* End Contact Section */
+
+/* Footer */
+
+footer {
+    background-color: black;
+    margin-top: 7%;
+    overflow: hidden;
+    width: 100%;
+    .footer-first-div {
+        text-align: center;
+        overflow: auto;
+        white-space: nowrap;
+        text-align:center; 
+        h1 {
+            color: white;
+            font-size: 20px;
+            display: inline-block;
+            position: relative;
+            top: 10%;
+        }
+        h1:after {
+            content: "";
+            display: block;
+            width: 0;
+            border-bottom: 2px solid blue;
+            margin: 0 auto;
+            transition: all 0.3s linear 0s;
+        }
+        h1:hover:after {
+            width: 92%;
+        }
+        img {
+            // float: left;
+            height: 60px;
+            width: 70px;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+    }
+    .footer-contact-number-div,
+    .footer-schedule-div, .footer-address-div {
+        margin-top: 0.5%;
+        img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    p {
+        color: white;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left: 5px;
+    } 
+    .footer-contact-form-div > p {
+        margin-top: 1%;
+    }
+    .footer-contact-number-div > img {
+        margin-top: 6%;
+    } 
+    .footer-address-div > img {
+        margin-top: 5%;
+    }
+    .footer-schedule-div > img {
+        margin-top: 4.7%;
+    }
+    .footer-contact-form-div > h1 {
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 431px) {
+    .navbar-brand-name {
+        display: none;
+    }
+}
+
+

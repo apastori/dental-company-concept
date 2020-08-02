@@ -1,0 +1,367 @@
+/* Crimson Text */
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text|Lato");
+/* Montserrat Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+/* Relaway Font of the entire website */
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400&display=swap");
+/* Main Variables */
+:root {
+  --translateXAxisAfter: 0px;
+  --translateXAxisBefore: 0px;
+  --translateYAxisAfter: 0px;
+  --translateYAxisBefore: 0px;
+  --translateDuration: 2s;
+}
+
+/* The purpose of the following ruleset is to eliminate all the given margins and padding
+of elements including the body tag to start clean */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+html, body {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px !important;
+  overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Navbar Style */
+.navbar-container {
+  height: 70px;
+  width: 100%;
+}
+
+header {
+  border-bottom: 1.5px solid blue;
+}
+
+header img {
+  height: 60px;
+  width: 70px;
+}
+
+header nav .navbar-brand-name {
+  font-size: 20px;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+  color: black;
+  text-decoration: none;
+}
+
+header nav .navbar-brand-name:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+header nav .navbar-brand-name:hover:after {
+  width: 92%;
+}
+
+header nav .navbar-toggler {
+  border: 2px solid blue !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header nav #navbarNav .navbar-nav .nav-link::before, header nav #navbarNav .navbar-nav .nav-link::after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #FFF;
+  content: "";
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+header nav #navbarNav .navbar-nav .nav-link::before {
+  top: 20px;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+header nav #navbarNav .navbar-nav .nav-link::after {
+  bottom: 20px;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+header nav #navbarNav .navbar-nav .nav-link {
+  margin-right: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: black;
+  position: relative;
+  font-size: 15px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+header nav #navbarNav .navbar-nav .nav-link:hover::before, header nav #navbarNav .navbar-nav .nav-link:hover::after {
+  background-color: blue;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+header nav #navbarNav .navbar-nav .active::before, header nav #navbarNav .navbar-nav .active::after {
+  background-color: blue;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+/* Main Banner */
+figure {
+  margin-bottom: 0 !important;
+  height: 25rem;
+}
+
+figure .fixed-wrapped {
+  background-image: url("../resources/man-sitting-on-dental-chair-fondo-color.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+figure .fixed-wrapped h1 {
+  padding-top: 10%;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+figure .fixed-wrapped h1:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+figure .fixed-wrapped h1:hover:after {
+  width: 92%;
+}
+
+.fun {
+  width: 100%;
+  margin-top: 0 !important;
+  margin-bottom: 2rem;
+  border-color: blue;
+}
+
+.fun:focus {
+  outline: 0;
+}
+
+.gif {
+  max-width: 100%;
+  margin-top: 3rem !important;
+}
+
+#teamSection {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#teamSection h1 {
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#teamSection h1:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+#teamSection h1:hover:after {
+  width: 92%;
+}
+
+#teamSection #cardsContainer {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#teamSection #cardsContainer .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#teamSection #cardsContainer .row .card {
+  border: 1px solid black;
+  padding: 1%;
+  margin-top: 3rem !important;
+}
+
+#teamSection #cardsContainer .row .card button {
+  padding: 2%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border-radius: 10%;
+  border: 1px solid blue;
+}
+
+#teamSection #cardsContainer .row .card button:hover {
+  color: green;
+  border-color: green;
+}
+
+/* Mission Section */
+#missionSection {
+  margin-top: 3rem;
+}
+
+#missionSection h2 {
+  margin-top: 10%;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#missionSection h2:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+#missionSection h2:hover:after {
+  width: 92%;
+}
+
+#missionSection p {
+  margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  margin-top: 2%;
+  overflow: hidden;
+  width: 100%;
+}
+
+footer .footer-first-div {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+footer .footer-first-div h1 {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  top: 10%;
+}
+
+footer .footer-first-div h1:after {
+  content: "";
+  display: block;
+  width: 0;
+  border-bottom: 2px solid blue;
+  margin: 0 auto;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+footer .footer-first-div h1:hover:after {
+  width: 92%;
+}
+
+footer .footer-first-div img {
+  height: 60px;
+  width: 70px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+footer .footer-contact-number-div,
+footer .footer-schedule-div, footer .footer-address-div {
+  margin-top: 0.5%;
+}
+
+footer .footer-contact-number-div img,
+footer .footer-schedule-div img, footer .footer-address-div img {
+  width: 35px;
+  height: 35px;
+}
+
+footer p {
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+footer .footer-contact-form-div > p {
+  margin-top: 1%;
+}
+
+footer .footer-contact-number-div > img {
+  margin-top: 6%;
+}
+
+footer .footer-address-div > img {
+  margin-top: 5%;
+}
+
+footer .footer-schedule-div > img {
+  margin-top: 4.7%;
+}
+
+footer .footer-contact-form-div > h1 {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 431px) {
+  .navbar-brand-name {
+    display: none;
+  }
+}
+/*# sourceMappingURL=aboutstyle.css.map */
